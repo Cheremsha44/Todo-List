@@ -3,9 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Todo list</h1>
+        </header>
+        <aside class="app-sidebar">
+            <button id="create-task-btn" class="btn-create">Create Task</button>
+            <div class="sidebar__section">
+                <h3 class="sidebar__title">Overview</h3>
+                <ul class="sidebar__menu" id="filters-list">
+                    <li class="menu-item active" data-filter="all">All tasks</li>
+                    <li class="menu-item" data-filter="priority">Priority tasks</li>
+                    <li class="menu-item" data-filter="today">Today</li>
+                    <li class="menu-item" data-filter="completed">Completed tasks</li>
+                </ul>
+            </div>
+            <div class="sidebar__section">
+                <h3 class="sidebar__title">My Projects</h3>
+                <ul class="sidebar__menu" id="projects-list">
+                    <li class="menu-item" data-project="team">Team tasks</li>
+                    <li class="menu-item" data-project="home">HomeWork</li>
+                </ul>
+            </div>
+        </aside>
+        <main class="todo-workspace">
+            <div class="task-card">
+                <div class="task-card__checkbox">
+                    <input type="checkbox" class="checkbox-custom">
+                </div>
+
+                <div class="task-card__content">
+                    <h4 class="task-title">Дописать Todo-лист</h4>
+                    <p class="task-desc">Настроить Webpack, сверстать UI и связать всё с JS.</p>
+                    
+                    <div class="task-meta">
+                        <span class="badge priority-high">High</span>
+                        <span class="task-date">📅 19 Июня</span>
+                    </div>
+                </div>
+
+                <div class="task-card__actions">
+                    <button class="btn-icon">🗑️</button>
+                </div>
+            </div>
+        </main>
+        <footer class="app-footer">
+            Copyright © 2026 Cheresmha44
+        </footer>
+    </div>
 </body>
 </html>

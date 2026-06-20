@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+button, input, textarea, select {
+    font: inherit;
+}
+html{
+    font-size: 24px;
+}
+
+:root {
+  /* Основные фоны и поверхности */
+  --color-main-bg: #FBFBFD;      /* Практически белый, но мягче */
+  --color-sidebar-bg: #E9E9EB;   /* Мягкий серый, как в настройках iOS */
+  --color-header-bg: #F9F9F9;    /* Чуть выделяем шапку */
+  
+  /* Текст */
+  --color-text-primary: #1C1C1E; /* Основной текст, очень темный */
+  --color-text-secondary: #6E6E73; /* Вторичный текст, серый */
+  
+  /* Акцент (Действие) */
+  --color-accent: #007AFF;       /* Классический iOS синий */
+  
+  /* Границы и тени (для объема) */
+  --color-border: #D1D1D6;        /* Тонкие линии разделения */
+  --color-shadow: rgba(0, 0, 0, 0.05); /* Супер-легкая тень */
+}
+
+body{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.app-container{
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr auto;
+    color: var(--color-text-primary);
+}
+
+.app-header{
+    grid-area: header;
+    background-color: var(--color-header-bg);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.app-sidebar{
+    grid-area: sidebar;
+    background-color: var(--color-sidebar-bg);
+    padding: 2rem 1.5rem;
+    border-right: 1px solid var(--color-border);
+}
+
+.todo-workspace{
+    grid-area: content;
+    background-color: var(--color-main-bg);
+    padding: 2rem;
+}
+
+.app-footer{
+    grid-area: footer;
+    background-color: var(--color-header-bg);
+    border-top: 1px solid var(--color-border);
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+}
+
+/*  */
+
+.btn-create {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease; 
+}
+
+.btn-create:hover {
+  background-color: #0062cc;
+}
+
+.sidebar__section {
+  margin-bottom: 2rem;
+}
+
+.sidebar__title {
+  font-size: 0.75rem;
+  text-transform: uppercase; 
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.sidebar__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.05)
+}
+
+.menu-item.active {
+  background-color: var(--color-accent);
+  color: #fff;
+  font-weight: 500;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--color-shadow) 0px 2px 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.task-card__content {
+  flex-grow: 1;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.task-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+}
+
+.task-desc {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.task-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.task-date {
+  color: var(--color-text-secondary);
+}
+
+.badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.priority-high {
+  background-color: #ffe5e5;
+  color: #d32f2f;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.btn-icon:hover {
+  opacity: 1;
+}
+
+.checkbox-custom {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
