@@ -1,5 +1,6 @@
 export class Project{
     constructor(projectName){
+        this.id = crypto.randomUUID();
         this.projectName = projectName;
         this.tasks = []
     }
@@ -8,5 +9,8 @@ export class Project{
     }
     deleteTask(id){
         this.tasks = this.tasks.filter(task => task.id !== id);
+    }
+    getIncompleteTasks(){
+        return this.tasks.filter(task => task.isComplete === false)
     }
 }

@@ -1,6 +1,7 @@
 export class Todo{
-    constructor(title, description, dueDate, priority){
+    constructor(projectId, title, description, dueDate, priority){
         this.id = crypto.randomUUID();
+        this.projectId = projectId;
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
@@ -11,10 +12,13 @@ export class Todo{
         this.isComplete = !this.isComplete
     }
     changePriority(newValue){
-        if(typeof newValue !== 'number' || newValue < 1 || newValue > 9){
+        if(typeof newValue !== 'number' || newValue < 1 || newValue > 3){
             console.error("Неверный приоритет")
             return;
         }
         this.priority = newValue
+    }
+    changeData(newValue){
+        this.dueDate = newValue
     }
 }
