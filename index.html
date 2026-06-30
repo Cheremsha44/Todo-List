@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script defer src="main.js"></script></head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Todo list</h1>
+        </header>
+        <aside class="app-sidebar">
+            <button id="create-task-btn" class="btn-create">Create Task</button>
+            <div class="sidebar__section">
+                <h3 class="sidebar__title">Overview</h3>
+                <ul class="sidebar__menu" id="filters-list">
+                    <li class="menu-item active" data-filter="all">All tasks</li>
+                    <li class="menu-item" data-filter="priority">Priority tasks</li>
+                    <li class="menu-item" data-filter="today">Today</li>
+                    <li class="menu-item" data-filter="completed">Completed tasks</li>
+                </ul>
+            </div>
+            <div class="sidebar__section">
+                <div class="sidebar__header">
+                    <h3 class="sidebar__title">My Projects</h3>
+                    <button id="addButton">+</button>
+                </div>
+                <form class="add-project-form hidden">
+                    <input type="text" id="new-project-input">
+                    <button id="submit-new-project">Add</button>
+                </form>
+                <ul class="sidebar__menu" id="projects-list">
+                </ul>
+            </div>
+        </aside>
+        <main class="todo-workspace">
+            <div id="input-task" class="task-card">
+                <div class="task-card__content">
+                    <form id="addForm">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" placeholder="Enter todo title" required>
+                        <label for="text">Text:</label>
+                        <input type="text" id="text" name="description" placeholder="Enter todo text">
+                        <label for="priority">Priority:</label>
+                        <input type="range" name="priority" min="1" max="3" step="1" value="2">
+                        <input type="date" name="dueDate" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tasks-container">
+                
+            </div>
+            
+        </main>
+        <footer class="app-footer">
+            Copyright © 2026 Cheresmha44
+        </footer>
+    </div>
+</body>
+</html>
